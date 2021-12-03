@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { v4 as uuidv4 } from 'uuid'; //External lib to create unique ID strings
 
 //When the onChange event is triggered we create an object with a unique ID and the task.

@@ -67,6 +67,7 @@ header form button {
   font-weight: bold;
   padding: 3px;
   margin-left: 4px;
+  cursor: pointer;
 }
 section {
   width: 100%;

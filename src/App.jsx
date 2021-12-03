@@ -19,7 +19,8 @@ const App = () => {
 
   //Use an effect to write to localStorage whenever the tasks array changes
   useEffect(() => {
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    tasks.length === 0 && localStorage.removeItem('tasks'); //If we have no tasks in the tasks array remove this from localStorage
+    tasks.length > 0 && localStorage.setItem('tasks', JSON.stringify(tasks)); //Only add or update localStorage if there are tasks in our tasks array
   }, [tasks]);
 
   //Once the user enters a new task and clicks on the submit button this function gets called
@@ -28,7 +29,6 @@ const App = () => {
   //array(tasks) with our effect above these changes will get written to our localStorage.
   const handleSubmit = (e) => {
     e.preventDefault();
-
     task.task.length > 0 && setTasks([...tasks, task]);
     setTask({ id: 0, task: '', done: false });
   };
