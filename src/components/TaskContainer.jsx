@@ -11,8 +11,8 @@ const TaskContainer = ({ tasks, handleDelete }) => {
     <aside>
       <h3>Active Tasks</h3>
       {tasks.length > 0 ? (
-        tasks.map((item) => (
-          <Task key={item.id} task={item} handleDelete={handleDelete} />
+        tasks.map((task) => (
+          <Task key={task.id} task={task} handleDelete={handleDelete} />
         ))
       ) : (
         <h2>No tasks pending</h2>

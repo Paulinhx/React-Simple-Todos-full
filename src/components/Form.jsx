@@ -1,22 +1,19 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid'; //External lib to create unique ID strings
 
-//When the onChange event is triggered we create an object with a unique ID and the task.
 //When the submit button is clicked we trigger the handleSubmit function, which will add our task
 //to our tasks array.
-const Form = ({ task, setTask, handleSubmit }) => {
+const Form = ({ taskInput, setTaskInput, handleSubmit, inputRef }) => {
   return (
     <form>
-      <label>Please enter your task</label>
       <input
         type='text'
+        placeholder='Please Enter your Todo'
+        ref={inputRef}
         maxLength='100'
-        value={task.task}
-        onChange={(e) =>
-          setTask({ id: uuidv4(), task: e.target.value, done: false })
-        }
+        value={taskInput}
+        onChange={(e) => setTaskInput(e.target.value)}
       />
-      <button onClick={(e) => handleSubmit(e)}>Add task</button>
+      <button onClick={handleSubmit}>Add task</button>
     </form>
   );
 };

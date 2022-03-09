@@ -8,7 +8,7 @@ const Task = ({ task, handleDelete }) => {
   return (
     <div className='task-container'>
       <div className='task'>
-        <p>{task.task}</p>
+        <p>{task.todo}</p>
       </div>
       <div className='bin'>
         <MdDelete
